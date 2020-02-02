@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: slategray;
+}
+
+header {
+    background-color: black;
+}
+header h1 {
+    color: white;
+    text-align: center;
+}
+
+main {
+    width: 100vw;
+    height: 100vh;
+}
+
+#clock {
+    height: fit-content;
+    width: fit-content;
+
+    margin: 5% auto;
+    padding: 1%;
+}
+
+.row {
+    display: inline-block;
+    margin: 10px;
+}
+
+.column {
+    display: inline-block;
+}
+
+.dot {
+
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    margin: 5px;
+
+    background-color: black;
+    
+}
+
+.dotColored {
+    background-color: springgreen;
+}
+
+.hide {
+    visibility: hidden;
+}
