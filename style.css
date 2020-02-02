@@ -9,15 +9,17 @@ body {
 
 header {
     background-color: black;
+    height: 2.5em;
+    padding: 1em;
 }
 header h1 {
     color: white;
     text-align: center;
+    font-family: monospace;
 }
 
 main {
     width: 100vw;
-    height: 100vh;
 }
 
 #clock {
@@ -26,6 +28,7 @@ main {
 
     margin: 5% auto;
     padding: 1%;
+
 }
 
 .row {
@@ -35,6 +38,7 @@ main {
 
 .column {
     display: inline-block;
+
 }
 
 .dot {
