@@ -4,18 +4,26 @@ let min1 = document.getElementById('min-1');
 let min2 = document.getElementById('min-2');
 let sec1 = document.getElementById('sec-1');
 let sec2 = document.getElementById('sec-2');
-
-let twelve = false;
+let expContainerEl = document.getElementById('expand-container');
+let expandEl = document.getElementById('expand-button');
+let toggleEl = document.querySelector('.toggle');
+let toggleDotEl = document.querySelector('.toggle-handle');
+let twelve = true;
 
 
 setInterval(function() {
+    
+    updateClock();
+
+}, 1000);
+
+function updateClock() {
     let now = new Date();
     
     updateSeconds(now);
     updateMinutes(now);
     updateHours(now);
-
-}, 1000);
+}
 
 function updateSeconds(time) {
     let sec = time.getSeconds();
@@ -35,6 +43,13 @@ function updateMinutes(time) {
 
 function updateHours(time) {
     let hour = time.getHours();
+
+    if (twelve) {
+        if (hour > 12) {
+            hour -=12;
+        }
+    }
+
     let tens = Math.floor(hour/10);
     let ones = hour%10;
     changeColors(hour1.children, clockBinaryConvert(tens));
@@ -67,3 +82,19 @@ function changeColors(childArr, binArr) {
         }
     }
 }
+
+expandEl.addEventListener("click", function(event) {
+    expContainerEl.classList.toggle('hidden');
+})
+
+toggleEl.addEventListener("click", function() {
+    
+    toggleDotEl.classList.toggle("twelve");
+    toggleDotEl.classList.toggle("twenty-four");
+    if (twelve) {
+        twelve = false;
+    } else {
+        twelve = true;
+    }
+    updateClock();
+})

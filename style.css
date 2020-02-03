@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: monospace;
 }
 
 body {
@@ -9,7 +10,7 @@ body {
 
 header {
     background-color: black;
-    height: 2.5em;
+    height: fit-content;
     padding: 1em;
 }
 header h1 {
@@ -17,6 +18,68 @@ header h1 {
     text-align: center;
     font-family: monospace;
 }
+
+#expand-button {
+    height: 8px;
+    width: 40px;
+    background-color: gray;
+    margin: 10px auto 0;
+
+    border-radius: 12px;
+}
+
+#time-toggle {
+    color: white;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+span {
+    display: inline-block;
+}
+
+.toggle {
+    display: inline-block;
+    position: relative;
+
+    height: 18px;
+    width: 50px;
+    background-color: darkgray;
+    margin: 0 5px;
+    border-radius: 10px;;
+}
+
+.toggle-handle {
+    display: inline-block;
+    position: relative; 
+    width: 13px;
+    background-color: springgreen;
+    height: 13px;
+    border-radius: 50%;
+    z-index: 2;
+    top: 2px;
+}
+
+.twenty-four {
+    left: 32px;
+}
+
+.twelve {
+    left: 5px;
+}
+
+/* Expanded menu styling */
+
+#expand-container {
+    margin: 10px;
+    
+}
+
+.hidden {
+    display: none;
+}
+
+/* Clock Styling */
 
 main {
     width: 100vw;

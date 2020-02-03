@@ -5,12 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <title>Binary Clock</title>
 </head>
 <body>
     <header>
         <h1>Binary Clock</h1>
+        <div id="expand-container" class="hidden">
+            <div id="time-toggle">
+                <span>12 Hour</span>
+                <div class="toggle"><div class="toggle-handle twelve"></div></div>
+                <span>24 Hour</span>
+            </div>
+        </div>
+        <div id="expand-button"></div>
     </header>
     <main>
         <section id="clock">
