@@ -8,8 +8,11 @@ let expContainerEl = document.getElementById('expand-container');
 let expandEl = document.getElementById('expand-button');
 let toggleEl = document.querySelector('.toggle');
 let toggleDotEl = document.querySelector('.toggle-handle');
+let numTogEl = document.getElementById('number-toggle');
+
 let twelve = true;
 
+updateClock();
 
 setInterval(function() {
     
@@ -29,16 +32,16 @@ function updateSeconds(time) {
     let sec = time.getSeconds();
     let tens = Math.floor(sec/10);
     let ones = sec%10;
-    changeColors(sec1.children, clockBinaryConvert(tens));
-    changeColors(sec2.children, clockBinaryConvert(ones));
+    changeColors(sec1.children, clockBinaryConvert(tens, sec1.lastElementChild));
+    changeColors(sec2.children, clockBinaryConvert(ones, sec2.lastElementChild));
 }
 
 function updateMinutes(time) {
     let min = time.getMinutes();
     let tens = Math.floor(min/10);
     let ones = min%10;
-    changeColors(min1.children, clockBinaryConvert(tens));
-    changeColors(min2.children, clockBinaryConvert(ones));
+    changeColors(min1.children, clockBinaryConvert(tens, min1.lastElementChild));
+    changeColors(min2.children, clockBinaryConvert(ones, min2.lastElementChild));
 }
 
 function updateHours(time) {
@@ -52,13 +55,13 @@ function updateHours(time) {
 
     let tens = Math.floor(hour/10);
     let ones = hour%10;
-    changeColors(hour1.children, clockBinaryConvert(tens));
-    changeColors(hour2.children, clockBinaryConvert(ones));
+    changeColors(hour1.children, clockBinaryConvert(tens, hour1.lastElementChild));
+    changeColors(hour2.children, clockBinaryConvert(ones, hour2.lastElementChild));
 }
 
 
-function clockBinaryConvert(num) {
-    
+function clockBinaryConvert(num, child) {
+    child.textContent = num;
     let bin = [];
 
     for (let i = 8; i >= 1; i /= 2) {
@@ -67,6 +70,9 @@ function clockBinaryConvert(num) {
             bin.push(1);
         } else bin.push(0);
     }
+
+    
+    
     
     return bin;
 }
@@ -74,12 +80,15 @@ function clockBinaryConvert(num) {
 function changeColors(childArr, binArr) {
 
     for (let i = 0; i < 4; i++) {
+ 
         if(childArr[i].classList.contains('dotColored')) {
             childArr[i].classList.remove('dotColored');
         }
         if(binArr[i] === 1) {
             childArr[i].classList.add('dotColored');
         }
+        
+        
     }
 }
 
@@ -97,4 +106,15 @@ toggleEl.addEventListener("click", function() {
         twelve = true;
     }
     updateClock();
+})
+
+numTogEl.addEventListener("click", function() {
+    let numDots = document.querySelectorAll('.number');
+    for (let i = 0; i < numDots.length; i++) {
+        numDots[i].classList.toggle('shown');
+    }
+    
+    this.children[1].firstElementChild.classList.toggle('twelve');
+    this.children[1].firstElementChild.classList.toggle('twenty-four');
+  
 })

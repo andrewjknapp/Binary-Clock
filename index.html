@@ -11,10 +11,15 @@
     <header>
         <h1>Binary Clock</h1>
         <div id="expand-container" class="hidden">
-            <div id="time-toggle">
+            <div id="time-toggle" class="toggle-button">
                 <span>12 Hour</span>
                 <div class="toggle"><div class="toggle-handle twelve"></div></div>
                 <span>24 Hour</span>
+            </div>
+            <div id="number-toggle" class="toggle-button">
+                <span>Normal</span>
+                <div class="toggle"><div class="toggle-handle twelve"></div></div>
+                <span>Digits</span>
             </div>
         </div>
         <div id="expand-button"></div>
@@ -27,12 +32,14 @@
                     <div class="dot hide"></div>
                     <div class="dot"></div>
                     <div class="dot"></div>
+                    <div class="dot number">1</div>
                 </div>
                 <div class="column" id="hour-2">
                     <div class="dot"></div>
                     <div class="dot"></div>
                     <div class="dot"></div>
                     <div class="dot"></div>
+                    <div class="dot number">1</div>
                 </div>
             </article>
             <article class="row" id="minutes">
@@ -41,12 +48,14 @@
                     <div class="dot"></div>
                     <div class="dot"></div>
                     <div class="dot"></div>
+                    <div class="dot number">1</div>
                 </div>
                 <div class="column" id="min-2">
                     <div class="dot"></div>
                     <div class="dot"></div>
                     <div class="dot"></div>
                     <div class="dot"></div>
+                    <div class="dot number">1</div>
                 </div>
             </article>
             <article class="row" id="seconds">
@@ -55,12 +64,14 @@
                     <div class="dot"></div>
                     <div class="dot"></div>
                     <div class="dot"></div>
+                    <div class="dot number">1</div>
                 </div>
                 <div class="column" id="sec-2">
                     <div class="dot"></div>
                     <div class="dot"></div>
                     <div class="dot"></div>
                     <div class="dot"></div>
+                    <div class="dot number">1</div>
                 </div>
             </article>
         </section>
